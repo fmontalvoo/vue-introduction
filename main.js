@@ -1,7 +1,7 @@
 import { createApp } from 'vue';
 
-import CounterButton from './components/counter-button.js'
+import CounterButtonComponent from './components/counter-button.component.js'
 
-const app = createApp(CounterButton);
+const app = createApp(CounterButtonComponent);
 
 app.mount('#app')
