@@ -1,6 +1,9 @@
 export default {
-  data() {
-    return { count: 0 }
+  props:{
+    counter: Number
+  },
+  data(){
+    return { count: this.counter }
   },
   template: `<button @click="increment">Boton pulsado {{ count }} veces.</button>`,
   methods: {
