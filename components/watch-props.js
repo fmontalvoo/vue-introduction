@@ -1,18 +1,31 @@
 export default {
     data() {
         return {
-            text: 'Hola mundo!!!',
+            text: 'Activo',
+            isActive: true,
         };
     },
     template: `
-        <div>
-            <input type="text" v-model="text" />
-            <p>{{text}}</p>
-        </div>
+    <div class="container" :class="style">
+        <h2>{{ text }}</h2>
+        <button @click="isActive = !isActive">{{ label }}</button>
+    </div>
     `,
     watch: {
-        text(newValue, oldValue) {
-            console.info(`Watching(text) -> new: ${newValue} | old: ${oldValue}`);
+        isActive(value) {
+            this.text = value
+                ? 'Activo'
+                : 'Inactivo';
         },
+    },
+    computed: {
+        label() {
+            return this.isActive
+                ? 'Desactivar'
+                : 'Activar';
+        },
+        style() {
+            return this.isActive ? ['active'] : ['inactive'];
+        }
     }
 }
