@@ -6,6 +6,9 @@ export default {
         InputComponent,
         InputComponentModel
     },
+    provide: {
+        valor: 'Valor ancestro'
+    },
     template: `
     <div class="container">
         <h2>{{text}}</h2>

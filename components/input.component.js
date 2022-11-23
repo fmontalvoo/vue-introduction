@@ -2,6 +2,7 @@ export const InputComponent = {
     props: {
         value: String
     },
+    inject: ['valor'],
     template: `<input type="text" :value="value" @input="customInput" />`,
     methods: {
         removeItem() {
@@ -19,6 +20,7 @@ export const InputComponentModel = {
     props: {
         value: String
     },
+    inject: ['valor'],
     template: `<input type="text" :value="value" @input="customInput" />`,
     methods: {
         removeItem() {
@@ -27,6 +29,7 @@ export const InputComponentModel = {
     },
     methods: {
         customInput(event) {
+            console.info(this.valor);
             this.$emit('update:value', event.target.value);
         }
     }
